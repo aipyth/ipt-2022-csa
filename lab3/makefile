@@ -1,14 +1,14 @@
 DEBUG_SERVER_PORT:=1234
 
 compile: src/main.asm
-	arm-linux-gnueabi-as src/main.asm -o os/main.o -g
+	arm-none-eabi-as src/main.asm -o os/main.o -g
 
-link: os/main.o
-	arm-linux-gnueabi-ld os/main.o -o bin/main -d
+link: compile
+	arm-none-eabi-ld os/main.o -o bin/main -d
 
-all: compile link
+all: link
 
-run:
+run: link
 	qemu-arm bin/main
 
 start-debug-server:
