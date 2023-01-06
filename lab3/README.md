@@ -32,7 +32,7 @@ make start-debug-server
 Start `gdb` debugger
 
 ```bash
-gdb
+arm-none-eabi-gdb
 ```
 
 ```
@@ -42,5 +42,6 @@ gdb
 
 *Optionally* start tui
 ```bash
-(gdb) layout next
+(gdb) tui enable
+(gdb) tui reg next
 ```

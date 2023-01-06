@@ -1,7 +1,7 @@
 DEBUG_SERVER_PORT:=1234
 
-compile: src/main.asm
-	arm-none-eabi-as src/main.asm -o os/main.o -g
+compile: src/main.s
+	arm-none-eabi-as src/main.s -o os/main.o -g
 
 link: compile
 	arm-none-eabi-ld os/main.o -o bin/main -d
